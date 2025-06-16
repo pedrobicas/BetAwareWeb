@@ -1,0 +1,80 @@
+<div class="historico-container">
+  <h1>Histórico de Apostas</h1>
+
+  <div class="filters">
+    <div class="date-range">
+      <div class="form-group">
+        <label for="dataInicio">Data Inicial:</label>
+        <input
+          type="date"
+          id="dataInicio"
+          [(ngModel)]="dataInicio"
+          name="dataInicio"
+        />
+      </div>
+      <div class="form-group">
+        <label for="dataFim">Data Final:</label>
+        <input
+          type="date"
+          id="dataFim"
+          [(ngModel)]="dataFim"
+          name="dataFim"
+        />
+      </div>
+    </div>
+
+    <div class="result-filter">
+      <label for="resultado">Resultado:</label>
+      <select
+        id="resultado"
+        [(ngModel)]="resultadoFiltro"
+        name="resultado"
+        (change)="filtrarApostas()"
+      >
+        <option value="">Todos</option>
+        <option value="GANHOU">Ganhou</option>
+        <option value="PERDEU">Perdeu</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-item">
+      <span class="label">Total de Apostas</span>
+      <span class="value">{{ totalApostas }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Valor Total</span>
+      <span class="value">R$ {{ valorTotal | number:'1.2-2' }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Valor Perdido</span>
+      <span class="value">R$ {{ valorPerdido | number:'1.2-2' }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Taxa de Sucesso</span>
+      <span class="value">{{ taxaSucesso }}%</span>
+    </div>
+  </div>
+
+  <div class="bets-list">
+    <div *ngIf="loading" class="loading">
+      Carregando histórico...
+    </div>
+    <div *ngIf="!loading && apostas.length === 0" class="no-bets">
+      Nenhuma aposta encontrada no período selecionado.
+    </div>
+    <div *ngFor="let aposta of apostas" class="bet-card">
+      <div class="bet-header">
+        <span class="game">{{ aposta.jogo }}</span>
+        <span class="date">{{ aposta.data | date:'dd/MM/yyyy HH:mm' }}</span>
+      </div>
+      <div class="bet-details">
+        <span class="value">R$ {{ aposta.valor | number:'1.2-2' }}</span>
+        <span class="result" [ngClass]="aposta.resultado.toLowerCase()">
+          {{ aposta.resultado }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div> 

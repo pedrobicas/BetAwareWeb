@@ -1,0 +1,57 @@
+<div class="dashboard-container">
+  <div class="welcome-section">
+    <h1>Bem-vindo, {{ user?.nome || 'Usuário' }}!</h1>
+    <p>Gerencie suas apostas e acompanhe seus resultados.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-info">
+        <span class="stat-label">Total de Apostas</span>
+        <span class="stat-value">{{ totalApostas }}</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <div class="stat-info">
+        <span class="stat-label">Valor Total</span>
+        <span class="stat-value">R$ {{ valorTotal | number:'1.2-2' }}</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📉</div>
+      <div class="stat-info">
+        <span class="stat-label">Valor Perdido</span>
+        <span class="stat-value">R$ {{ valorPerdido | number:'1.2-2' }}</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-info">
+        <span class="stat-label">Taxa de Sucesso</span>
+        <span class="stat-value">{{ taxaSucesso }}%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-bets">
+    <h2>Apostas Recentes</h2>
+    <div *ngIf="loading" class="loading">Carregando...</div>
+    <div *ngIf="!loading && apostas.length === 0" class="no-bets">
+      Nenhuma aposta encontrada
+    </div>
+    <div *ngFor="let aposta of apostas" class="bet-card">
+      <div class="bet-header">
+        <span class="game">{{ aposta.jogo }}</span>
+        <span class="date">{{ aposta.data | date:'dd/MM/yyyy HH:mm' }}</span>
+      </div>
+      <div class="bet-details">
+        <span class="value">R$ {{ aposta.valor | number:'1.2-2' }}</span>
+        <span class="result" [ngClass]="aposta.resultado.toLowerCase()">
+          {{ aposta.resultado }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div> 

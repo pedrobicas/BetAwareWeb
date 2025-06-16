@@ -1,0 +1,110 @@
+<div class="relatorio-container">
+  <h1>Relatório de Apostas</h1>
+
+  <div class="period-selector">
+    <div class="form-group">
+      <label for="periodo">Período:</label>
+      <select
+        id="periodo"
+        [(ngModel)]="periodoSelecionado"
+        (change)="atualizarRelatorio()"
+      >
+        <option value="7">Últimos 7 dias</option>
+        <option value="30">Últimos 30 dias</option>
+        <option value="90">Últimos 90 dias</option>
+        <option value="365">Último ano</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Desempenho Geral</h3>
+      <div class="stat-content">
+        <div class="stat-item">
+          <span class="label">Total de Apostas</span>
+          <span class="value">{{ totalApostas }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Valor Total</span>
+          <span class="value">R$ {{ valorTotal | number:'1.2-2' }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Taxa de Sucesso</span>
+          <span class="value">{{ taxaSucesso }}%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <h3>Resultados</h3>
+      <div class="stat-content">
+        <div class="stat-item">
+          <span class="label">Apostas Ganhas</span>
+          <span class="value success">{{ apostasGanhas }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Apostas Perdidas</span>
+          <span class="value danger">{{ apostasPerdidas }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Saldo</span>
+          <span class="value" [ngClass]="saldo >= 0 ? 'success' : 'danger'">
+            R$ {{ saldo | number:'1.2-2' }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <h3>Médias</h3>
+      <div class="stat-content">
+        <div class="stat-item">
+          <span class="label">Valor Médio</span>
+          <span class="value">R$ {{ valorMedio | number:'1.2-2' }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Apostas por Dia</span>
+          <span class="value">{{ apostasPorDia | number:'1.1-1' }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Maior Aposta</span>
+          <span class="value">R$ {{ maiorAposta | number:'1.2-2' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trends-section">
+    <h2>Tendências</h2>
+    <div class="trends-grid">
+      <div class="trend-card">
+        <h3>Melhor Dia</h3>
+        <div class="trend-content">
+          <span class="date">{{ melhorDia.data | date:'dd/MM/yyyy' }}</span>
+          <span class="value success">+R$ {{ melhorDia.valor | number:'1.2-2' }}</span>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <h3>Pior Dia</h3>
+        <div class="trend-content">
+          <span class="date">{{ piorDia.data | date:'dd/MM/yyyy' }}</span>
+          <span class="value danger">-R$ {{ piorDia.valor | number:'1.2-2' }}</span>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <h3>Sequência de Vitórias</h3>
+        <div class="trend-content">
+          <span class="value">{{ sequenciaVitorias }} apostas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-overlay" *ngIf="loading">
+    <div class="loading-spinner"></div>
+    <span>Carregando relatório...</span>
+  </div>
+</div> 

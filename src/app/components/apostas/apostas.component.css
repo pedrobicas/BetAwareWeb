@@ -1,0 +1,151 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin: 0 0 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.loading,
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+.apostas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aposta-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  background: #fff;
+}
+
+.aposta-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.aposta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.categoria {
+  font-size: 0.8em;
+  color: #666;
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.jogo {
+  font-weight: bold;
+  color: #333;
+}
+
+.data {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.aposta-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.valor {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.resultado {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.resultado.ganhou {
+  background: #d4edda;
+  color: #155724;
+}
+
+.resultado.perdeu {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+} 
