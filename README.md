@@ -1,27 +1,83 @@
-# Betawareweb
+# Betaware - Sistema de Gerenciamento de Apostas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+## Sobre o Projeto
+Betaware é uma plataforma, com o objetivo de conscientizar sobre os riscos das apostas esportivas. A plataforma permite que o usuário simule apostas fictícias, visualize relatórios detalhados de desempenho e acompanhe seu comportamento ao longo do tempo.
 
-## Development server
+## Funcionalidades Principais
+- 🎮 Registro e gerenciamento de apostas
+- 📊 Dashboard com estatísticas em tempo real
+- 📈 Relatórios detalhados de desempenho
+- 📱 Interface responsiva e intuitiva
+- 🔒 Sistema de autenticação seguro
+- 📝 Histórico completo de apostas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
+- Angular 17
+- TypeScript
+- SCSS
+- HTML5
+- RESTful API
+- JWT Authentication
 
-## Code scaffolding
+## Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm (gerenciador de pacotes do Node.js)
+- Angular CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalação
 
-## Build
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/betaware.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Navegue até o diretório do projeto:
+```bash
+cd betaware
+```
 
-## Running unit tests
+3. Instale as dependências:
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Inicie o servidor de desenvolvimento:
+```bash
+ng serve
+```
 
-## Running end-to-end tests
+5. Acesse a aplicação em `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Estrutura do Projeto
+```
+src/
+├── app/
+│   ├── components/     # Componentes da aplicação
+│   ├── services/       # Serviços e integrações
+│   ├── guards/         # Guards de autenticação
+│   ├── interceptors/   # Interceptores HTTP
+│   └── models/         # Interfaces e tipos
+├── assets/            # Recursos estáticos
+└── environments/      # Configurações de ambiente
+```
 
-## Further help
+## Equipe de Desenvolvimento
+### Time de Desenvolvimento
+- Felipe Terra – RM 99405
+- Pedro Bicas – RM 99534
+- Gabriel Doms – RM 98630
+- Lucas Vassão – RM 98607
+- Bryan Willians – RM 551305
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Contribuição
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Faça o Commit das suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Faça o Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## Licença
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contato
+Para mais informações sobre o projeto, entre em contato com a equipe de desenvolvimento.
