@@ -1,4 +1,4 @@
-# Betaware - Sistema de Gerenciamento de Apostas
+# BetAwareWeb - Sistema de Gerenciamento de Apostas
 
 ## Sobre o Projeto
 Betaware é uma plataforma, com o objetivo de conscientizar sobre os riscos das apostas esportivas. A plataforma permite que o usuário simule apostas fictícias, visualize relatórios detalhados de desempenho e acompanhe seu comportamento ao longo do tempo.
@@ -62,7 +62,6 @@ src/
 ```
 
 ## Equipe de Desenvolvimento
-### Time de Desenvolvimento
 - Felipe Terra – RM 99405
 - Pedro Bicas – RM 99534
 - Gabriel Doms – RM 98630
