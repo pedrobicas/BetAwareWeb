@@ -66,7 +66,7 @@ src/
 - Pedro Bicas – RM 99534
 - Gabriel Doms – RM 98630
 - Lucas Vassão – RM 98607
-- Bryan Willians – RM 551305
+- Bryan Willian – RM 551305
 
 ## Contribuição
 1. Faça um Fork do projeto
